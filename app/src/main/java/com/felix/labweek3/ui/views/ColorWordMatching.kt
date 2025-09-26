@@ -20,7 +20,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -59,6 +58,13 @@ fun ColorWordMatching(){
         countdown = 5
         countdownRunning = true
     }
+
+    fun exit(){
+        // reset all records
+
+        gameState = GameState.WELCOME
+    }
+
 
     Column (
         modifier = Modifier
@@ -179,8 +185,8 @@ fun ColorWordMatching(){
             )
 
             // Button
-            CustomBtn("Restart Game") { }
-            CustomBtn("Exit") { }
+            CustomBtn("Restart Game") { startGame() }
+            CustomBtn("Exit") { exit() }
 
         }
 
