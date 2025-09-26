@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
     implementation("androidx.compose.material:material-icons-extended:1.7.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
