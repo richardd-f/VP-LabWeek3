@@ -267,7 +267,7 @@ fun RockPaperScissors(){
                 fontSize = 25.sp
             )
             Text(
-                text = "Best score: 3",
+                text = "Best score: $highScore",
                 fontSize = 18.sp
             )
             Row (
