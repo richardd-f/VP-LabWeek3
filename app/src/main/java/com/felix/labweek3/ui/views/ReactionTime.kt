@@ -41,6 +41,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,7 +67,7 @@ enum class FinalType{
 @Composable
 fun ReactionTime() {
     var state by rememberSaveable { mutableStateOf(AppState.START) }
-    val recordsTime = rememberSaveable { mutableStateListOf<Long?>(null, null, null) } // keep as val
+    val recordsTime = rememberSaveable { mutableStateListOf<Long?>(null, null, null) }
     var currentRecordTime by rememberSaveable { mutableStateOf(0L) }
     var trialNumber by rememberSaveable { mutableStateOf(1) }
     var averageTime by rememberSaveable { mutableStateOf(0L) }
@@ -264,7 +265,8 @@ fun ReactionTime() {
             else "Average : ${averageTime}ms",
             style = bodyStyle,
             modifier = Modifier
-                .padding(bottom = 30.dp)
+                .padding(bottom = 30.dp),
+            textAlign = TextAlign.Center
         )
 
         // Text: Click to start, DONT CLICK YET, TAP AS FAST AS YOU CAN, Continue to trial

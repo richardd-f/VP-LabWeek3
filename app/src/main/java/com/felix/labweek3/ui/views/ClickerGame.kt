@@ -42,9 +42,7 @@ fun ClickerGame(){
     var coins by rememberSaveable { mutableStateOf<Float>(0f) }
     var addAmount by rememberSaveable { mutableStateOf<Float>(1f) }
     var upgradePrice by rememberSaveable { mutableStateOf<Float>(10f) }
-
     var isMouthOpen by rememberSaveable { mutableStateOf(false) }
-
     var coinNeededToUpgrade = (upgradePrice - coins).coerceAtLeast(0f)
 
     fun upgradeValue(){
@@ -52,7 +50,6 @@ fun ClickerGame(){
         addAmount *= 1.5f
         upgradePrice *= 2
     }
-
     fun onClickImage(){
         isMouthOpen = true
         coins += addAmount
@@ -60,7 +57,6 @@ fun ClickerGame(){
     fun onReleaseImage(){
         isMouthOpen = false
     }
-
 
     Box(
         modifier = Modifier
@@ -153,7 +149,8 @@ fun ClickerGame(){
 
             // Purr or Meow
             Text(
-                text = "Purr~~",
+                text = if(!isMouthOpen) "Purr~~"
+                else "Meoww~~~",
                 color = Color.White,
                 fontSize = 18.sp
             )

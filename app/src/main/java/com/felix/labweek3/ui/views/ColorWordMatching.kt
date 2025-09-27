@@ -62,10 +62,11 @@ fun ColorWordMatching(){
     var incorrectAmount by rememberSaveable { mutableStateOf(-1) }
     var highScore by rememberSaveable { mutableStateOf(0) }
 
+
+    // Get random color with exclude feature
     fun getRandomColor():ColorName{
         return ColorName.entries[Random.nextInt(0, ColorName.entries.size)]
     }
-    // Get random color with exclude feature, so the options will not duplicated
     fun getRandomColor(exclude: ColorName): ColorName {
         val availableColors = ColorName.entries.filter { it != exclude }
         return availableColors.random()
@@ -94,7 +95,6 @@ fun ColorWordMatching(){
         countdownRunning = true
 
     }
-
     fun strike(){
         if(incorrectAmount>=3){
             gameState = GameState.GAMEOVER
@@ -104,8 +104,6 @@ fun ColorWordMatching(){
             generateQuestion()
         }
     }
-
-    // Countdown Engine
     LaunchedEffect(countdownRunning, gameState, incorrectAmount) {
         while(countdown>=0){
             if(countdown == 0){
@@ -128,7 +126,6 @@ fun ColorWordMatching(){
             strike()
         }
     }
-
     fun answer(answer:ColorName){
         // COLOR mode
         if(mode == Mode.COLOR){
@@ -155,8 +152,6 @@ fun ColorWordMatching(){
             }
         }
     }
-
-    // Logic App Flow
     fun startGame(){
         // reset
         incorrectAmount =-1
@@ -174,13 +169,13 @@ fun ColorWordMatching(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-
         // Welcome Text
         if(gameState == GameState.WELCOME){
             Text(
                 text = "Welcome\nto\nColor Word Matching",
                 fontSize = 30.sp,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                lineHeight = 35.sp
             )
 
             Button(
@@ -290,10 +285,8 @@ fun ColorWordMatching(){
             CustomBtn("Exit") { gameState = GameState.WELCOME }
 
         }
-
     }
 }
-
 
 @Composable
 fun CustomBtn(text: String, onClick: ()->Unit){

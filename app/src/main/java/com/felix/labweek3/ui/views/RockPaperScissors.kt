@@ -100,7 +100,9 @@ fun RockPaperScissors(){
             score++
             if(score>highScore) highScore = score
         }
-        else cpuScore++
+        else if(winState == WinState.LOSE){
+            cpuScore++
+        }
 
         if(cpuScore>(bestOf/2) || score>(bestOf/2)){
             gameView = GameView.RESULT
