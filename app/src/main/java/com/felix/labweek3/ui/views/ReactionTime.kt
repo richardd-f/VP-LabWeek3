@@ -367,8 +367,8 @@ val bodyStyle= TextStyle(
     color = Color.White
 )
 
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun Preview(){
-//    ReactionTime()
-//}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun Preview(){
+    ReactionTime()
+}

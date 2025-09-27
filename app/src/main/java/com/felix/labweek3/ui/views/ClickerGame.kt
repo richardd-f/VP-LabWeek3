@@ -205,8 +205,8 @@ fun ClickerGame(){
 }
 
 
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun Preview(){
-//    ClickerGame()
-//}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun Preview2(){
+    ClickerGame()
+}

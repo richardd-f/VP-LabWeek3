@@ -19,6 +19,7 @@ import com.felix.labweek3.ui.theme.LabWeek3Theme
 import com.felix.labweek3.ui.views.ClickerGame
 import com.felix.labweek3.ui.views.ColorWordMatching
 import com.felix.labweek3.ui.views.ReactionTime
+import com.felix.labweek3.ui.views.RockPaperScissors
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +29,9 @@ class MainActivity : ComponentActivity() {
             LabWeek3Theme {
                 window.statusBarColor = android.graphics.Color.WHITE
 //                ReactionTime()
-                ClickerGame()
+//                ClickerGame()
 //                ColorWordMatching()
+                RockPaperScissors()
             }
         }
     }
